@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página Inicial</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; background-color: #f4f4f4; }
+        h1 { color: #333; }
+        p { color: #666; }
+    </style>
+</head>
+<body>
+	
+	<ul>
+	    <li th:each="frase : ${frases}" th:text="${frase}"></li>
+	</ul>
+	
+    <h1 th:text="${mensagem}"></h1>
+    <p>Esta é a sua primeira página Spring MVC com Thymeleaf!</p>
+    <p>Acesse <a href="/saudacao">a página de saudação</a>.</p>
+	<p>Preencha nosso <a href="/formulario-usuario">formulário de usuário</a>.</p>
+</body>
+</html>

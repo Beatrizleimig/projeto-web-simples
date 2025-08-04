@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resultado do Formulário</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; background-color: #f4f4f4; }
+        h1 { color: #333; }
+        p { color: #666; }
+        div { background-color: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); width: 300px; margin: 20px 0; }
+        strong { color: #007bff; }
+    </style>
+</head>
+<body>
+    <h1>Resultado do Formulário</h1>
+
+    <p th:text="${confirmacao}"></p>
+
+    <div th:if="${usuarioProcessado != null}">
+        <p>Nome: <strong th:text="${usuarioProcessado.nome}"></strong></p>
+        <p>Email: <strong th:text="${usuarioProcessado.email}"></strong></p>
+    </div>
+    <div th:unless="${usuarioProcessado != null}">
+        <p>Nenhum dado de usuário foi processado.</p>
+    </div>
+
+    <p><a href="/formulario-usuario">Voltar ao formulário</a>.</p>
+    <p><a href="/">Voltar para a página inicial</a>.</p>
+	<p><a href="/lista-usuarios">Lista de usuarios</a>.</p>
+</body>
+</html>
